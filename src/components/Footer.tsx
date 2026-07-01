@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
       <div className="max-w-7xl mx-auto mt-8 md:mt-16 pt-6 md:pt-8 border-t border-surface/10 text-center">
         <p className="font-body text-[10px] uppercase tracking-widest3 opacity-40">
-          © 2024 Barid Coffee &amp; Tea Roastery. Zamboanga City Branch.
+          © 2026 Barid Coffee &amp; Tea Roastery. Zamboanga City Branch.
         </p>
       </div>
     </footer>
