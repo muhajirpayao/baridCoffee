@@ -38,7 +38,7 @@ function Word({ word, delay }: { word: string; delay: number }) {
   return (
     <span
       ref={ref}
-      className={`reveal font-display text-[34px] md:text-[56px] text-surface uppercase tracking-tight`}
+      className={`reveal font-display text-[26px] md:text-[56px] text-surface uppercase tracking-tight`}
       style={{ transitionDelay: `${delay * 130}ms` }}
     >
       {word}
@@ -60,16 +60,16 @@ export default function TickerWords() {
   const eyebrowRef = useReveal<HTMLSpanElement>()
 
   return (
-    <section className="py-24 md:py-28 px-6 bg-espresso relative overflow-hidden">
+    <section className="min-h-[100svh] md:min-h-0 flex flex-col justify-center py-16 md:py-28 px-6 bg-espresso relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[radial-gradient(circle_at_20%_20%,white,transparent_35%),radial-gradient(circle_at_80%_60%,white,transparent_30%)]" />
       <div className="max-w-5xl mx-auto text-center relative">
         <span
           ref={eyebrowRef}
-          className="reveal font-body text-[11px] text-clay-light tracking-widest3 uppercase mb-6 block"
+          className="reveal font-body text-[10px] md:text-[11px] text-clay-light tracking-widest3 uppercase mb-4 md:mb-6 block"
         >
           Ready to Welcome
         </span>
-        <h2 className="font-display text-[28px] md:text-[42px] text-surface leading-tight mb-16">
+        <h2 className="font-display text-[22px] md:text-[42px] text-surface leading-tight mb-8 md:mb-16">
           We have a brew for every <CyclingWord />
         </h2>
         <RepeatLine />

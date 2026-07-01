@@ -9,48 +9,51 @@ export default function Details() {
   const mapRef = useReveal<HTMLDivElement>()
 
   return (
-    <section className="py-24 md:py-32 px-6 bg-cream" id="details">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14">
-        <div ref={leftRef} className="reveal space-y-12 border-l border-outline-variant pl-10">
+    <section
+      className="min-h-[100svh] md:min-h-0 flex flex-col justify-center py-10 md:py-32 px-6 bg-cream"
+      id="details"
+    >
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14">
+        <div ref={leftRef} className="reveal space-y-5 md:space-y-12 border-l border-outline-variant pl-5 md:pl-10">
           <div>
-            <span className="font-body text-[11px] text-clay tracking-widest2 uppercase mb-3 block">
+            <span className="font-body text-[9px] md:text-[11px] text-clay tracking-widest2 uppercase mb-2 md:mb-3 block">
               The Roastery Location
             </span>
-            <h2 className="font-display text-[30px] md:text-[38px] text-espresso mb-6 uppercase tracking-tight leading-tight">
+            <h2 className="font-display text-[22px] md:text-[38px] text-espresso mb-3 md:mb-6 uppercase tracking-tight leading-tight">
               Barid Coffee And Tea, Zamboanga City
             </h2>
-            <address className="not-italic text-ink-soft font-body text-[17px] space-y-1.5 leading-relaxed">
+            <address className="not-italic text-ink-soft font-body text-[13px] md:text-[17px] space-y-1 md:space-y-1.5 leading-relaxed">
               <p>Governor Camins Avenue,</p>
               <p>Zamboanga City, 7000</p>
-              <p className="pt-3 text-espresso font-semibold">+63 (062) 991 2345</p>
+              <p className="pt-2 md:pt-3 text-espresso font-semibold">+63 (062) 991 2345</p>
             </address>
           </div>
-          <div className="grid grid-cols-2 gap-6 border-t border-outline-variant pt-8">
+          <div className="grid grid-cols-2 gap-4 md:gap-6 border-t border-outline-variant pt-4 md:pt-8">
             <div>
-              <span className="font-body text-[10px] uppercase tracking-widest text-outline block mb-1.5">
-                Monday — Saturday
+              <span className="font-body text-[9px] md:text-[10px] uppercase tracking-widest text-outline block mb-1 md:mb-1.5">
+                Mon — Sat
               </span>
-              <p className="font-body text-espresso font-semibold">08:00 AM — 10:00 PM</p>
+              <p className="font-body text-[13px] md:text-base text-espresso font-semibold">08AM — 10PM</p>
             </div>
             <div>
-              <span className="font-body text-[10px] uppercase tracking-widest text-outline block mb-1.5">
-                Sunday Rituals
+              <span className="font-body text-[9px] md:text-[10px] uppercase tracking-widest text-outline block mb-1 md:mb-1.5">
+                Sunday
               </span>
-              <p className="font-body text-espresso font-semibold">10:00 AM — 09:00 PM</p>
+              <p className="font-body text-[13px] md:text-base text-espresso font-semibold">10AM — 09PM</p>
             </div>
           </div>
-          <div className="pt-2 flex flex-wrap gap-4">
+          <div className="pt-1 md:pt-2 flex flex-wrap gap-3 md:gap-4">
             <a
               href={MAPS_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-espresso text-surface px-8 py-3 font-body text-[11px] uppercase tracking-widest hover:opacity-90 transition-opacity inline-block"
+              className="bg-espresso text-surface px-5 md:px-8 py-2.5 md:py-3 font-body text-[10px] md:text-[11px] uppercase tracking-widest hover:opacity-90 transition-opacity inline-block"
             >
               Get Directions
             </a>
             <a
               href="tel:+630629912345"
-              className="border border-espresso text-espresso px-8 py-3 font-body text-[11px] uppercase tracking-widest hover:bg-espresso hover:text-surface transition-all duration-500 inline-block"
+              className="border border-espresso text-espresso px-5 md:px-8 py-2.5 md:py-3 font-body text-[10px] md:text-[11px] uppercase tracking-widest hover:bg-espresso hover:text-surface transition-all duration-500 inline-block"
             >
               Call the Roastery
             </a>
@@ -59,7 +62,7 @@ export default function Details() {
 
         <div
           ref={mapRef}
-          className="reveal reveal-delay-2 relative h-[420px] md:h-[520px] bg-surface border border-outline-variant overflow-hidden group"
+          className="reveal reveal-delay-2 relative h-[220px] md:h-[520px] bg-surface border border-outline-variant overflow-hidden group"
         >
           <iframe
             title="Barid Coffee And Tea location map"
@@ -73,7 +76,7 @@ export default function Details() {
             href={MAPS_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-6 left-6 bg-surface p-4 border border-outline-variant shadow-lg max-w-xs hover:shadow-xl transition-shadow duration-300"
+            className="hidden md:block absolute bottom-6 left-6 bg-surface p-4 border border-outline-variant shadow-lg max-w-xs hover:shadow-xl transition-shadow duration-300"
           >
             <p className="font-body text-[10px] uppercase tracking-widest text-clay mb-1.5">
               Gateway to the City

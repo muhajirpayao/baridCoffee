@@ -1,9 +1,13 @@
+import Logo from './Logo'
 export default function Footer() {
   return (
-    <footer className="bg-espresso-deep text-surface py-20 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-14 items-start">
+    <footer className="bg-espresso-deep text-surface py-10 md:py-20 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-14 items-start">
         <div className="text-left">
-          <h2 className="font-display text-[26px] tracking-widest2 uppercase mb-4">Barid</h2>
+          <div className="flex items-center gap-3 mb-4">
+            <Logo className="w-8 h-8 text-surface" />
+            <h2 className="font-display text-[26px] tracking-widest2 uppercase">Barid</h2>
+          </div>
           <p className="font-body text-parchment-high/70 max-w-xs">
             Preserving the art of the slow pour since 2012. Crafted in Zamboanga City.
           </p>
@@ -42,9 +46,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-surface/10 text-center">
+      <div className="max-w-7xl mx-auto mt-8 md:mt-16 pt-6 md:pt-8 border-t border-surface/10 text-center">
         <p className="font-body text-[10px] uppercase tracking-widest3 opacity-40">
-          © 2026 Barid Coffee &amp; Tea Roastery. Zamboanga City Branch.
+          © 2024 Barid Coffee &amp; Tea Roastery. Zamboanga City Branch.
         </p>
       </div>
     </footer>

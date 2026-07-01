@@ -21,7 +21,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <header id="top" className="relative h-[92vh] w-full flex items-center justify-center overflow-hidden bg-espresso">
+    <header id="top" className="relative h-[100svh] md:h-[92vh] w-full flex items-center justify-center overflow-hidden bg-espresso">
       <div
         className="absolute inset-0 z-0 will-change-transform"
         style={{ transform: `translateY(${offset}px) scale(1.04)` }}
@@ -49,29 +49,29 @@ export default function Hero() {
       </div>
 
       <div
-        className={`relative z-10 text-center px-6 max-w-4xl border border-surface/20 py-14 md:py-20 bg-espresso/10 backdrop-blur-[2px] mx-4 transition-all duration-[1400ms] ease-out ${
+        className={`relative z-10 text-center px-5 max-w-4xl border border-surface/20 py-8 md:py-20 bg-espresso/10 backdrop-blur-[2px] mx-4 transition-all duration-[1400ms] ease-out ${
           loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
-        <span className="font-body text-[11px] text-clay-light tracking-widest3 uppercase mb-3 block">
+        <span className="font-body text-[10px] md:text-[11px] text-clay-light tracking-widest3 uppercase mb-2 md:mb-3 block">
           Heritage &amp; Craft
         </span>
-        <h1 className="font-display text-[52px] md:text-[86px] text-surface leading-[1.05] tracking-[0.1em] mb-5 uppercase">
+        <h1 className="font-display text-[38px] md:text-[86px] text-surface leading-[1.05] tracking-[0.08em] md:tracking-[0.1em] mb-3 md:mb-5 uppercase">
           <span className="text-shimmer">Classic Heritage</span>
         </h1>
-        <p className="font-display text-[20px] md:text-[24px] text-parchment-high italic font-normal tracking-wide border-t border-b border-surface/20 py-3 inline-block px-4">
+        <p className="font-display text-[15px] md:text-[24px] text-parchment-high italic font-normal tracking-wide border-t border-b border-surface/20 py-2 md:py-3 inline-block px-3 md:px-4">
           Refined Roasting in Zamboanga City
         </p>
-        <div className="mt-10 flex flex-col md:flex-row gap-4 justify-center">
+        <div className="mt-6 md:mt-10 flex flex-col md:flex-row gap-3 md:gap-4 justify-center">
           <a
             href="#menu"
-            className="bg-surface text-espresso px-9 py-3 font-body text-[11px] uppercase tracking-[0.2em] border border-surface hover:bg-transparent hover:text-surface transition-all duration-500"
+            className="bg-surface text-espresso px-7 md:px-9 py-2.5 md:py-3 font-body text-[10px] md:text-[11px] uppercase tracking-[0.2em] border border-surface hover:bg-transparent hover:text-surface transition-all duration-500"
           >
             View Rituals
           </a>
           <a
             href="#details"
-            className="border border-surface text-surface px-9 py-3 font-body text-[11px] uppercase tracking-[0.2em] hover:bg-surface hover:text-espresso transition-all duration-500"
+            className="border border-surface text-surface px-7 md:px-9 py-2.5 md:py-3 font-body text-[10px] md:text-[11px] uppercase tracking-[0.2em] hover:bg-surface hover:text-espresso transition-all duration-500"
           >
             Visit Roastery
           </a>

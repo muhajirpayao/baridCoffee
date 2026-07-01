@@ -24,6 +24,14 @@ body {
   color: #1a0b08;
 }
 
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);

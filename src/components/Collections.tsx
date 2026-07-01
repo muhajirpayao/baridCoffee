@@ -41,9 +41,9 @@ function Card({ item, delay }: { item: Item; delay: number }) {
   return (
     <div
       ref={ref}
-      className={`reveal reveal-delay-${delay} group border border-outline-variant/50 bg-surface p-3 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500`}
+      className={`reveal reveal-delay-${delay} group border border-outline-variant/50 bg-surface p-3 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 w-[78vw] sm:w-[60vw] md:w-auto flex-shrink-0 snap-center md:snap-align-none`}
     >
-      <div className="relative aspect-[3/4] overflow-hidden mb-5 border border-outline-variant/60">
+      <div className="relative aspect-[3/4] overflow-hidden mb-3 md:mb-5 border border-outline-variant/60">
         <img
           className="w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-110"
           alt={item.alt}
@@ -51,17 +51,17 @@ function Card({ item, delay }: { item: Item; delay: number }) {
         />
         <div className="absolute inset-0 bg-espresso/0 group-hover:bg-espresso/10 transition-colors duration-500" />
       </div>
-      <div className="px-2 pb-3">
-        <span className="font-body text-[10px] text-clay tracking-widest uppercase mb-1.5 block">
+      <div className="px-2 pb-2 md:pb-3">
+        <span className="font-body text-[9px] md:text-[10px] text-clay tracking-widest uppercase mb-1 md:mb-1.5 block">
           {item.eyebrow}
         </span>
-        <h3 className="font-display text-[24px] text-espresso mb-2">{item.name}</h3>
-        <p className="text-ink-soft font-body text-[15px] mb-5 h-12 overflow-hidden leading-relaxed">
+        <h3 className="font-display text-[19px] md:text-[24px] text-espresso mb-1.5 md:mb-2">{item.name}</h3>
+        <p className="text-ink-soft font-body text-[13px] md:text-[15px] mb-3 md:mb-5 h-10 md:h-12 overflow-hidden leading-relaxed">
           {item.desc}
         </p>
-        <div className="flex justify-between items-center border-t border-outline-variant pt-4">
-          <span className="font-display text-[22px] font-semibold text-espresso">{item.price}</span>
-          <button className="text-clay font-body text-[11px] uppercase tracking-widest hover:text-espresso transition-colors relative group/btn">
+        <div className="flex justify-between items-center border-t border-outline-variant pt-3 md:pt-4">
+          <span className="font-display text-[18px] md:text-[22px] font-semibold text-espresso">{item.price}</span>
+          <button className="text-clay font-body text-[10px] md:text-[11px] uppercase tracking-widest hover:text-espresso transition-colors relative group/btn">
             Details
             <span className="absolute left-0 -bottom-1 h-px w-0 bg-espresso transition-all duration-300 group-hover/btn:w-full" />
           </button>
@@ -75,20 +75,28 @@ export default function Collections() {
   const headRef = useReveal<HTMLDivElement>()
 
   return (
-    <section className="py-24 md:py-32 px-6 bg-cream" id="collection">
-      <div className="max-w-7xl mx-auto">
-        <div ref={headRef} className="reveal text-center mb-16">
-          <span className="font-body text-[11px] text-clay uppercase tracking-widest3 mb-3 block">
+    <section
+      className="min-h-[100svh] md:min-h-0 flex flex-col justify-center py-14 md:py-32 px-0 md:px-6 bg-cream"
+      id="collection"
+    >
+      <div className="max-w-7xl mx-auto w-full">
+        <div ref={headRef} className="reveal text-center mb-8 md:mb-16 px-6">
+          <span className="font-body text-[10px] md:text-[11px] text-clay uppercase tracking-widest3 mb-2 md:mb-3 block">
             The Roastery Curations
           </span>
-          <h2 className="font-display text-[32px] md:text-[42px] text-espresso">Signature Collections</h2>
-          <div className="w-24 h-px bg-outline-variant mx-auto mt-6" />
+          <h2 className="font-display text-[24px] md:text-[42px] text-espresso">Signature Collections</h2>
+          <div className="w-24 h-px bg-outline-variant mx-auto mt-4 md:mt-6" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        {/* Mobile: horizontal swipe carousel. Desktop: 3-column grid. */}
+        <div className="flex md:grid md:grid-cols-3 gap-5 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory px-6 md:px-0 pb-2 md:pb-0 hide-scrollbar">
           {ITEMS.map((item, i) => (
             <Card key={item.name} item={item} delay={Math.min(i + 1, 4)} />
           ))}
         </div>
+        <p className="md:hidden text-center text-[10px] uppercase tracking-widest text-outline mt-4">
+          Swipe to explore →
+        </p>
       </div>
     </section>
   )

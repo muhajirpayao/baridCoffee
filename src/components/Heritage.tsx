@@ -13,8 +13,8 @@ function StatItem({ top, bottom, delay }: { top: string; bottom: string; delay: 
   const ref = useReveal<HTMLDivElement>()
   return (
     <div ref={ref} className={`reveal reveal-delay-${delay}`}>
-      <span className="block font-display text-[26px] text-espresso italic">{top}</span>
-      <span className="font-body text-[10px] uppercase tracking-widest text-outline">{bottom}</span>
+      <span className="block font-display text-[18px] md:text-[26px] text-espresso italic">{top}</span>
+      <span className="font-body text-[8px] md:text-[10px] uppercase tracking-widest text-outline">{bottom}</span>
     </div>
   )
 }
@@ -24,28 +24,40 @@ export default function Heritage() {
   const textRef = useReveal<HTMLDivElement>()
 
   return (
-    <section className="py-24 md:py-32 px-6 bg-surface" id="heritage">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-14 items-center">
+    <section
+      className="min-h-[100svh] md:min-h-0 flex flex-col justify-center py-14 md:py-32 px-6 bg-surface"
+      id="heritage"
+    >
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-14 items-center">
           <div ref={imgRef} className="reveal md:col-span-6">
-            <div className="border border-outline-variant/40 bg-cream shadow-sm p-10 relative">
-              <div className="absolute inset-[10px] border border-outline-variant/20 pointer-events-none" />
+            <div className="border border-outline-variant/40 bg-cream shadow-sm p-3 md:p-10 relative">
+              <div className="absolute inset-[6px] md:inset-[10px] border border-outline-variant/20 pointer-events-none" />
               <img
-                className="w-full aspect-[4/5] object-cover border border-outline-variant"
+                className="w-full aspect-[16/10] md:aspect-[4/5] object-cover border border-outline-variant"
                 alt="Master roaster inspecting beans at the Barid roastery in Zamboanga, warm wood interiors and vintage scales"
                 src={STORY_IMG}
               />
             </div>
           </div>
 
-          <div ref={textRef} className="reveal reveal-delay-2 md:col-span-6 border-l border-outline-variant pl-10">
-            <span className="font-body text-[11px] text-clay uppercase tracking-widest2 mb-3 block">
+          <div
+            ref={textRef}
+            className="reveal reveal-delay-2 md:col-span-6 border-l border-outline-variant pl-5 md:pl-10"
+          >
+            <span className="font-body text-[10px] md:text-[11px] text-clay uppercase tracking-widest2 mb-2 md:mb-3 block">
               Our Story
             </span>
-            <h2 className="font-display text-[32px] md:text-[42px] text-espresso mb-6 leading-tight">
+            <h2 className="font-display text-[24px] md:text-[42px] text-espresso mb-3 md:mb-6 leading-tight">
               A Legacy Reimagined in the City of Flowers
             </h2>
-            <div className="space-y-5 text-ink-soft font-body text-[17px] leading-[1.7]">
+
+            {/* Condensed copy for mobile, full copy for desktop */}
+            <p className="md:hidden text-ink-soft font-body text-[14px] leading-[1.6]">
+              Barid's journey began with a devotion to the classic brew — a sanctuary in Zamboanga City where
+              heritage meets modern artisanry, celebrating both origin and destination.
+            </p>
+            <div className="hidden md:block space-y-5 text-ink-soft font-body text-[17px] leading-[1.7]">
               <p>
                 Barid's journey began with a simple devotion to the classic brew. In the heart of Zamboanga
                 City, we established a sanctuary where the heritage of the bean meets the precision of
@@ -57,7 +69,8 @@ export default function Heritage() {
                 celebrates both the origin and the destination.
               </p>
             </div>
-            <div className="mt-10 pt-8 border-t border-outline-variant grid grid-cols-3 gap-6">
+
+            <div className="mt-5 md:mt-10 pt-5 md:pt-8 border-t border-outline-variant grid grid-cols-3 gap-3 md:gap-6">
               {STATS.map((s, i) => (
                 <StatItem key={s.bottom} top={s.top} bottom={s.bottom} delay={Math.min(i + 2, 4)} />
               ))}
