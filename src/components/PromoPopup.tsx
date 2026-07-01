@@ -66,7 +66,7 @@ export default function PromoPopup() {
               A Small Welcome
             </span>
             <h3 className="font-display text-[28px] text-espresso mb-3 leading-tight">
-              Take 10% Off Your First Ritual
+              Take 10% Off Your First Coffee Order
             </h3>
             <p className="font-body text-ink-soft text-[15px] mb-6 leading-relaxed">
               Join our list for early access to seasonal roasts, tasting sessions, and news from the roastery.
