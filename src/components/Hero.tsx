@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
 
 const HERO_POSTER =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuB2WpMFKHIISt1fTEBh-iAt08BsHiwVz3x4VRB8S7l1LB-0AbM27UAlOs31GbZ2D0lolWxkw1KyHsjj_EXHUkMj7njNM6awPvg2yfDuPs4ZHyD0GQPFgWrBu0IkFbMMzlrgdl49iOSxcKScdZP59NQ4si0rP7iMw4B3Ed8BTvVaeztlOK1tE945SXRu861LY5F1Ht8C7NIAFs817HucBJaexX4AbrcW_Jw5ybKCgpIYNt1RcqU3g_tkWA'
+  'https://images.pexels.com/videos/17422066/arabian-coffee-coffe-coffee-art-coffee-bar-17422066.jpeg?auto=compress&cs=tinysrgb&h=1920&w=1080&fit=crop'
 
-// Free Mixkit stock footage — royalty free, no attribution required.
-const HERO_VIDEO = 'https://assets.mixkit.co/videos/4989/4989-360.mp4'
+// Free Pexels stock footage — royalty free, HD (1080x1920), no attribution required.
+const HERO_VIDEO = 'https://videos.pexels.com/video-files/17422066/17422066-hd_1080_1920_25fps.mp4'
 
 export default function Hero() {
   const [offset, setOffset] = useState(0)
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setOffset(window.scrollY * 0.35)
+    const onScroll = () => setOffset(window.scrollY * 0.25)
     window.addEventListener('scroll', onScroll, { passive: true })
     const t = setTimeout(() => setLoaded(true), 100)
     return () => {
@@ -24,16 +24,17 @@ export default function Hero() {
     <header id="top" className="relative h-[92vh] w-full flex items-center justify-center overflow-hidden bg-espresso">
       <div
         className="absolute inset-0 z-0 will-change-transform"
-        style={{ transform: `translateY(${offset}px) scale(1.15)` }}
+        style={{ transform: `translateY(${offset}px) scale(1.04)` }}
       >
         <video
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           poster={HERO_POSTER}
-          aria-label="Coffee being roasted, ground, and brewed at the Barid roastery"
+          aria-label="Espresso pouring into a cup at the Barid roastery"
         >
           <source src={HERO_VIDEO} type="video/mp4" />
         </video>
@@ -48,7 +49,7 @@ export default function Hero() {
       </div>
 
       <div
-        className={`relative z-10 text-center px-6 max-w-4xl py-14 md:py-20 bg-espresso/10 backdrop-blur-[2px] mx-4 transition-all duration-[1400ms] ease-out ${
+        className={`relative z-10 text-center px-6 max-w-4xl border border-surface/20 py-14 md:py-20 bg-espresso/10 backdrop-blur-[2px] mx-4 transition-all duration-[1400ms] ease-out ${
           loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
