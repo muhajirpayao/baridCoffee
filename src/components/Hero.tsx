@@ -21,7 +21,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <header id="top" className="relative h-[100svh] md:h-[92vh] w-full flex items-center justify-center overflow-hidden bg-espresso">
+    <header id="top" className="relative h-[100svh] md:h-[92vh] w-full flex items-start md:items-center justify-center overflow-hidden bg-espresso pt-28 md:pt-0">
       <div
         className="absolute inset-0 z-0 will-change-transform"
         style={{ transform: `translateY(${offset}px) scale(1.04)` }}

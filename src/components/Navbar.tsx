@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-[60] border-b transition-all duration-500 ${
+      className={`md:fixed top-0 w-full z-[60] border-b transition-all duration-500 ${
         scrolled
           ? 'py-3 bg-surface/95 backdrop-blur-md border-outline-variant/40 shadow-[0_1px_0_rgba(0,0,0,0.03)]'
           : 'py-6 bg-surface/80 backdrop-blur-sm border-outline-variant/20'
@@ -39,7 +39,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <a href="#top" className="text-center group">
+        <a href="#top" className="text-center group mb-1">
           <span
             className={`font-display text-espresso uppercase transition-all duration-500 ${
               scrolled ? 'text-[20px] tracking-[0.28em]' : 'text-[26px] tracking-[0.32em]'
